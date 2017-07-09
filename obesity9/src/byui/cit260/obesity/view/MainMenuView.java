@@ -8,6 +8,7 @@ package byui.cit260.obesity.view;
 import obesity.CuriousWorkmanship;
 import byui.cit260.obesity.control.GameControl;
 import byui.cit260.obesity.exception.MapControlException;
+import byui.cit260.obesity.control.QuestionControl;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
