@@ -85,10 +85,10 @@ public class ReportControl {
         }
         return true;
     }
-
-    @Override
+      
+      @Override
     public String toString() {
-        return (playerName + " - " + playerScore);
+        return (playerName + "\t\t\t" + playerScore);
     }
 }
     
