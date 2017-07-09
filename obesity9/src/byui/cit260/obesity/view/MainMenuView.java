@@ -28,6 +28,7 @@ public class MainMenuView extends View{
                 + "\nG - Get and start saved game"
                 + "\nH - Get help on how to play the game"
                 + "\nRP - Report"
+                + "\nL - Print study list"
                 + "\nS - Save game"
                 + "\nQ - Quit"
                 + "\n------------------------------------------");
@@ -57,6 +58,9 @@ public class MainMenuView extends View{
                 break;
             case "RP":
                 this.printReport();
+                break;
+            case "L": //get and show all questions
+                this.saveStudyList();
                 break;
             case "S":
                 this.saveGame();
@@ -114,9 +118,25 @@ public class MainMenuView extends View{
        }
     }
 
+    private void saveStudyList() {   
+        //prompt for and get the name of the file to save the game in
+        this.console.println("\n\nEnter the file path for the file where the game "
+                        + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            //save the game to the specified file
+            QuestionControl.saveStudyList(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+    }
+    
     private void printReport() {
        ReportView reportView = new ReportView();
        reportView.display();
+        
+        
     }
      
     }
